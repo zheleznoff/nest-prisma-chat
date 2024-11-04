@@ -38,7 +38,7 @@ export class MessageService {
     return messages;
   }
 
-  findOne(id: string) {
+  findOne(id: number) {
     return this.prisma.message.findFirst({ where: { id } }).then(message => {
       if (!message) {
         throw new NotFoundException('Сообщение не найдено!');
